@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { Toggle } from '@/components/ui/toggle';
 import { Button } from '@/components/ui/button';
 import { CardTitle, CardHeader, CardContent, CardFooter, Card } from '@/components/ui/card';
-import { JSX, SVGProps } from 'react';
 import { FiLinkedin, FiGithub, FiFlag, FiMoon } from 'react-icons/fi';
+import TextLink from '@/components/textLink';
 
 export default function Home() {
   return (
@@ -14,30 +14,10 @@ export default function Home() {
       >
         <header className="flex h-20 w-full items-center px-2 sm:px-4 md:px-6">
           <nav className="ml-auto flex gap-2 sm:gap-4 md:gap-6">
-            <Link
-              className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-[#e5f7ef]"
-              href="#"
-            >
-              Home
-            </Link>
-            <Link
-              className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-[#e5f7ef]"
-              href="#"
-            >
-              About
-            </Link>
-            <Link
-              className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-[#e5f7ef]"
-              href="#"
-            >
-              Projects
-            </Link>
-            <Link
-              className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-[#e5f7ef]"
-              href="#"
-            >
-              Contact
-            </Link>
+            <TextLink href="">Home</TextLink>
+            <TextLink href="about">About</TextLink>
+            <TextLink href="projects">Projects</TextLink>
+            <TextLink href="social">Contact</TextLink>
           </nav>
           {/* <Toggle
             aria-label="Toggle language"
