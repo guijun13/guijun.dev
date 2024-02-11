@@ -11,7 +11,7 @@ export default function Home() {
       key="1"
       className="min-h-screen bg-[#262a33] text-[#e5f7ef] font-mono scroll-behavior-smooth"
     >
-      <header className="flex h-20 w-full items-center px-2 sm:px-4 md:px-6">
+      <header className="flex h-20 w-full items-center px-2 sm:px-4 md:px-6 fixed rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
         <nav className="ml-auto flex gap-2 sm:gap-4 md:gap-6">
           <TextLink href="">Home</TextLink>
           <TextLink href="about">About</TextLink>
@@ -32,7 +32,7 @@ export default function Home() {
             <FiMoon className="h-4 w-4" />
           </Toggle> */}
       </header>
-      <main className="flex flex-col gap-8 sm:gap-16 px-2 sm:px-4 md:px-6 py-6 sm:py-12">
+      <main className="flex flex-col px-2 sm:px-4 md:px-6">
         <section
           className="space-y-2 sm:space-y-4 text-center min-h-screen flex flex-col justify-center"
           id="home"
@@ -63,7 +63,7 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        <section className="space-y-2 sm:space-y-4 min-h-screen" id="about">
+        <section className="space-y-2 sm:space-y-4 min-h-screen pt-20" id="about">
           <h2 className="text-xl sm:text-2xl font-bold tracking-tighter md:text-3xl lg:text-4xl text-center text-[#e5f7ef]">
             About Me
           </h2>
@@ -73,7 +73,7 @@ export default function Home() {
             technologies and improve my skills.
           </p>
         </section>
-        <section className="space-y-2 sm:space-y-4 min-h-screen" id="projects">
+        <section className="space-y-2 sm:space-y-4 min-h-screen pt-20" id="projects">
           <h2 className="text-xl sm:text-2xl font-bold tracking-tighter md:text-3xl lg:text-4xl text-center text-[#e5f7ef]">
             My Projects
           </h2>
