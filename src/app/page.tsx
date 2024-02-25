@@ -1,3 +1,5 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Toggle } from '@/components/ui/toggle';
 import { Button } from '@/components/ui/button';
@@ -5,7 +7,22 @@ import { CardTitle, CardHeader, CardContent, CardFooter, Card } from '@/componen
 import { FiLinkedin, FiGithub, FiFlag, FiMoon, FiFileText } from 'react-icons/fi';
 import TextLink from '@/components/textLink';
 
+interface IGithubProjects {
+  full_name: string;
+  name: string;
+  language: string;
+  html_url: string;
+}
+
 export default function Home() {
+  const [githubProjects, setGithubProjects] = useState<IGithubProjects[] | []>([]);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/guijun13/repos')
+      .then((serverResponse) => serverResponse.json())
+      .then((data) => setGithubProjects(data));
+  }, []);
+
   return (
     <div
       key="1"
@@ -73,28 +90,36 @@ export default function Home() {
             technologies and improve my skills.
           </p>
         </section>
-        <section className="space-y-2 sm:space-y-4 min-h-screen pt-20" id="projects">
+        <section className="space-y-2 sm:space-y-4 min-h-screen py-20" id="projects">
           <h2 className="text-xl sm:text-2xl font-bold tracking-tighter md:text-3xl lg:text-4xl text-center text-[#e5f7ef]">
             My Projects
           </h2>
-          <h4 className="text-center">🚧 Under construction 🚧</h4>
+          {/* <h4 className="text-center">🚧 Under construction 🚧</h4> */}
           <div className="grid gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {/* <Card className="bg-[#262a33] text-[#e5f7ef]">
-                <CardHeader>
-                  <CardTitle>Project 1</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#e5f7ef]">A brief description of the project goes here.</p>
-                </CardContent>
-                <CardFooter>
-                  <Link
-                    className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-[#e5f7ef]"
-                    href="#"
-                  >
-                    View Project
-                  </Link>
-                </CardFooter>
-              </Card> */}
+            {githubProjects.map((project) => {
+              return (
+                <Card key={project?.full_name} className="bg-[#262a33] text-[#e5f7ef]">
+                  <CardHeader>
+                    <CardTitle>{project.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-[#e5f7ef]">
+                      {project.language != null ? project.language : '?'}
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Link
+                      className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-[#e5f7ef]"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={project.html_url}
+                    >
+                      View Project
+                    </Link>
+                  </CardFooter>
+                </Card>
+              );
+            })}
           </div>
         </section>
       </main>
