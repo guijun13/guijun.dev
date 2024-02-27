@@ -64,7 +64,7 @@ export default function Home() {
             <Link
               rel="noopener noreferrer"
               target="_blank"
-              href="https://drive.google.com/file/d/12yqdl9d8QYbA2_pbupBSiNQMvnCljLc7/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1hy6lqY7uYXE8q_1yr8rBv9velyH1k7r7/view?usp=sharing"
             >
               <FiFileText className="h-4 sm:h-6 w-4 sm:w-6 text-[#e5f7ef] transition-all transform hover:scale-110" />
             </Link>
