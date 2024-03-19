@@ -14,7 +14,7 @@ interface IGithubProjects {
   html_url: string;
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const [githubProjects, setGithubProjects] = useState<IGithubProjects[] | []>([]);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function Home() {
             <Link
               rel="noopener noreferrer"
               target="_blank"
-              href="https://drive.google.com/file/d/1hy6lqY7uYXE8q_1yr8rBv9velyH1k7r7/view?usp=sharing"
+              href="https://drive.google.com/file/d/1-6vfA82C9raS6MbSfkMR1FUhCtT4gkB3/view?usp=sharing"
             >
               <FiFileText className="h-4 sm:h-6 w-4 sm:w-6 text-[#e5f7ef] transition-all transform hover:scale-110" />
             </Link>
@@ -85,9 +85,10 @@ export default function Home() {
             About Me
           </h2>
           <p className="mx-auto max-w-[700px] text-[#e5f7ef] md:text-xl/relaxed text-center">
-            I am a full-stack web developer with a passion for creating dynamic and user-friendly
-            websites. I specialize in Typescript and React. I am always eager to learn new
-            technologies and improve my skills.
+            I am a computer science student at Universidade de São Paulo (USP). I have two years of
+            experience as a software engineer intern at Rocket.Chat, a leading open-source chat
+            platform. My core competencies include front-end web and mobile development with React
+            and Typescript, software development and UX/UI design with Figma.
           </p>
         </section>
         <section className="space-y-2 sm:space-y-4 min-h-screen py-20" id="projects">
